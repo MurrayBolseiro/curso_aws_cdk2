@@ -15,7 +15,8 @@ public class VpcStack extends Stack {
     public VpcStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
         Vpc.Builder.create(this,"Vpc01")
-                .maxAzs(3)
+                .maxAzs(2)
+                .natGateways(0)
                 .build();
         // The code that defines your stack goes here
 
