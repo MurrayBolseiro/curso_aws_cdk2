@@ -44,13 +44,6 @@
             <version>${cdk.version}</version>
         </dependency>
 
-        <!-- AWS Cloud Development Kit -->
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>aws-cdk-lib</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>software.constructs</groupId>
             <artifactId>constructs</artifactId>
