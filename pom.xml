@@ -44,10 +44,24 @@
             <version>${cdk.version}</version>
         </dependency>
 
-        <!-- AWS Cloud Development Kit -->
+        <!-- AWS ECS -  Elastic Container Service -->
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>aws-cdk-lib</artifactId>
+            <artifactId>ecs</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
+
+        <!-- AWS EC2 -  Elastic Container Service -->
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>ec2</artifactId>
+            <version>${cdk.version}</version>
+        </dependency>
+
+        <!-- AWS EC2 -  Elastic Container Service -->
+        <dependency>
+            <groupId>software.amazon.awscdk</groupId>
+            <artifactId>ecs-partterns</artifactId>
             <version>${cdk.version}</version>
         </dependency>
 

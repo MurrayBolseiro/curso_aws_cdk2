@@ -8,13 +8,14 @@ import software.constructs.Construct;
 // import software.amazon.awscdk.services.sqs.Queue;
 
 public class VpcStack extends Stack {
+    private Vpc vpc;
     public VpcStack(final Construct scope, final String id) {
         this(scope, id, null);
     }
 
     public VpcStack(final Construct scope, final String id, final StackProps props) {
         super(scope, id, props);
-        Vpc.Builder.create(this,"Vpc01")
+        vpc = Vpc.Builder.create(this,"Vpc01")
                 .maxAzs(2)
                 .natGateways(0)
                 .build();
@@ -24,5 +25,9 @@ public class VpcStack extends Stack {
         // final Queue queue = Queue.Builder.create(this, "CursoAwsCdk2Queue")
         //         .visibilityTimeout(Duration.seconds(300))
         //         .build();
+    }
+
+    public Vpc getVpc() {
+        return vpc;
     }
 }
