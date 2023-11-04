@@ -15,6 +15,9 @@ public class CursoAwsCdk2App {
         ClusterStack clusterStack = new ClusterStack(app, "Custer", vpcStack.getVpc());
         clusterStack.addDependency(vpcStack);
 
+        CursoAwsCdk2Stack cursoAwsCdk2Stack = new CursoAwsCdk2Stack(app,"Service01",clusterStack.getCluster());
+        clusterStack.addDependency(clusterStack);
+
         app.synth();
     }
 }
