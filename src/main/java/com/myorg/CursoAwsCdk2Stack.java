@@ -1,18 +1,23 @@
 package com.myorg;
 
-import software.amazon.awscdk.Duration;
-import software.amazon.awscdk.RemovalPolicy;
+
+
 import software.amazon.awscdk.services.applicationautoscaling.EnableScalingProps;
 import software.amazon.awscdk.services.ecs.*;
 import software.amazon.awscdk.services.ecs.patterns.ApplicationLoadBalancedFargateService;
 import software.amazon.awscdk.services.ecs.patterns.ApplicationLoadBalancedTaskImageOptions;
+import software.amazon.awscdk.services.elasticloadbalancingv2.HealthCheck;
 import software.amazon.awscdk.services.logs.LogGroup;
+
+import software.amazon.awscdk.services.ecs.Cluster;
+
+
+import software.amazon.awscdk.Duration;
+import software.amazon.awscdk.RemovalPolicy;
 import software.constructs.Construct;
 import software.amazon.awscdk.Stack;
 import software.amazon.awscdk.StackProps;
-import software.amazon.awscdk.services.elasticloadbalancingv2.HealthCheck;
 import software.amazon.awscdk.services.ecs.AwsLogDriverProps;
-import software.amazon.awscdk.services.ecs.Cluster;
 import software.amazon.awscdk.services.ecs.ContainerImage;
 import software.amazon.awscdk.services.ecs.LogDriver;
 
@@ -23,6 +28,7 @@ public class CursoAwsCdk2Stack extends Stack {
 
     public CursoAwsCdk2Stack(final Construct scope, final String id, final StackProps props, Cluster cluster) {
         super(scope, id, props);
+
         ApplicationLoadBalancedFargateService service01 = ApplicationLoadBalancedFargateService.Builder.create(this,"ALB01")
                 .serviceName("service-01")
                 .cluster(cluster)
